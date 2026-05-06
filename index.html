@@ -10,6 +10,8 @@
     h1 { color: #2c3e50; }
     p { line-height: 1.6; }
     code { background: #eef1f6; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    .btn { display: inline-block; padding: 0.8rem 1.4rem; background: #2c3e50; color: #fff; text-decoration: none; border-radius: 6px; transition: background 0.2s ease; }
+    .btn:hover { background: #1a2432; }
   </style>
 </head>
 <body>
@@ -26,8 +28,13 @@
     <p>先在終端機啟動分析程式：</p>
     <pre><code>python run.py</code></pre>
     <p>啟動後，點擊下面按鈕進入股票分析介面：</p>
-    <p><a class="btn" href="http://localhost:8501" target="_blank">開啟股票分析程式</a></p>
+    <p><button id="openApp" class="btn" type="button">開啟股票分析程式</button></p>
     <p>若連結尚未開啟，請確認 Streamlit 應用已經成功啟動。</p>
   </div>
+  <script>
+    document.getElementById('openApp').addEventListener('click', function() {
+      window.open('http://localhost:8501', '_blank');
+    });
+  </script>
 </body>
 </html>
